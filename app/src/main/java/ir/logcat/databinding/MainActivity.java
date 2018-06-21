@@ -19,5 +19,7 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.activity_main);
 
         binding.setUser(UsersRepository.getUser());
+
+        Utils.changeUsername(UsersRepository.getUser());
     }
 }

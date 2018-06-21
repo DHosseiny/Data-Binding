@@ -1,11 +1,13 @@
 package ir.logcat.databinding;
 
+import android.databinding.ObservableField;
+
 /**
  * Created by Davud. Databinding project.
  */
 public class User {
 
-    private String name;
+    private final ObservableField<String> name;
     public int userCount;
     public String imageUrl;
     public String description;
@@ -15,7 +17,7 @@ public class User {
     public User(String name, int userCount, String imageUrl, String description,
                 boolean notifications, int sharedMedia) {
 
-        this.name = name;
+        this.name = new ObservableField<>(name);
         this.userCount = userCount;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -23,7 +25,11 @@ public class User {
         this.sharedMedia = sharedMedia;
     }
 
-    public String getName() {
+    public ObservableField<String> getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
     }
 }

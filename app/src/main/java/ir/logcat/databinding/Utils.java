@@ -47,6 +47,19 @@ public class Utils {
                 .into(imageView);
     }
 
+    public static void changeUsername(User user) {
+
+        new Thread(() -> {
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            user.setName("Android RockStars");
+        }).start();
+    }
+
     public static boolean isConnected(Context context) {
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
