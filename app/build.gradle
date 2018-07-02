@@ -1,7 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
     defaultConfig {
         applicationId "ir.logcat.databinding"
         minSdkVersion 15
@@ -12,7 +15,6 @@ android {
         vectorDrawables.useSupportLibrary = true
 
     }
-
     dataBinding {
         enabled = true
     }
